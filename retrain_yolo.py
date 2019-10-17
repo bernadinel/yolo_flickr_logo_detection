@@ -253,7 +253,7 @@ def train(model, class_names, anchors, image_data, boxes, detectors_mask, matchi
     model.fit([image_data, boxes, detectors_mask, matching_true_boxes],
               np.zeros(len(image_data)),
               validation_split=validation_split,
-              batch_size=32,
+              batch_size=8,
               epochs=5,
               callbacks=[logging])
     model.save_weights('trained_stage_1.h5')
