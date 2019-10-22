@@ -109,7 +109,7 @@ def get_anchors(anchors_path):
 
 def process_data(images, boxes=None):
     '''processes the data'''
-    orig_size = np.array([608, 608])
+    orig_size = np.array([416, 416])
     orig_size = np.expand_dims(orig_size, axis=0)
 
     # Image preprocessing.
@@ -157,7 +157,7 @@ def get_detector_mask(boxes, anchors):
     detectors_mask = [0 for i in range(len(boxes))]
     matching_true_boxes = [0 for i in range(len(boxes))]
     for i, box in enumerate(boxes):
-        detectors_mask[i], matching_true_boxes[i] = preprocess_true_boxes(box, anchors, [608, 608])
+        detectors_mask[i], matching_true_boxes[i] = preprocess_true_boxes(box, anchors, [416, 416])
 
     return np.array(detectors_mask), np.array(matching_true_boxes)
 
@@ -179,11 +179,11 @@ def create_model(anchors, class_names, load_pretrained=True, freeze_body=True):
 
     '''
 
-    detectors_mask_shape = (19, 19, 5, 1) # maybe 19 19
-    matching_boxes_shape = (19, 19, 5, 5)
+    detectors_mask_shape = (13, 13, 5, 1) # maybe 19 19
+    matching_boxes_shape = (13, 13, 5, 5)
 
     # Create model input layers.
-    image_input = Input(shape=(608, 608, 3)) #maybe 608 608
+    image_input = Input(shape=(416, 416, 3)) #maybe 608 608
     boxes_input = Input(shape=(None, 5))
     detectors_mask_input = Input(shape=detectors_mask_shape)
     matching_boxes_input = Input(shape=matching_boxes_shape)
