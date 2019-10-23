@@ -13,9 +13,9 @@ from keras.layers import Input, Lambda, Conv2D
 from keras.models import load_model, Model
 from keras.callbacks import TensorBoard, ModelCheckpoint, EarlyStopping
 
-from yad2k.models.keras_yolo import (preprocess_true_boxes, yolo_body,
+from yolo_flickr_logo_detection.yad2k.models.keras_yolo import (preprocess_true_boxes, yolo_body,
                                      yolo_eval, yolo_head, yolo_loss)
-from yad2k.utils.draw_boxes import draw_boxes
+from yolo_flickr_logo_detection.yad2k.utils.draw_boxes import draw_boxes
 
 # Args
 argparser = argparse.ArgumentParser(

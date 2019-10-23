@@ -17,9 +17,9 @@ from keras import backend as K
 from keras.layers import Input, Lambda
 from keras.models import Model
 
-from yad2k.models.keras_yolo import (preprocess_true_boxes, yolo_body,
+from yolo_flickr_logo_detection.yad2k.models.keras_yolo import (preprocess_true_boxes, yolo_body,
                                      yolo_eval, yolo_head, yolo_loss)
-from yad2k.utils.draw_boxes import draw_boxes
+from yolo_flickr_logo_detection.yad2k.utils.draw_boxes import draw_boxes
 
 YOLO_ANCHORS = np.array(
     ((0.57273, 0.677385), (1.87446, 2.06253), (3.33843, 5.47434),

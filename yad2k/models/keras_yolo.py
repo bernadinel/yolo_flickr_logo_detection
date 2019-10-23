@@ -342,7 +342,7 @@ def yolo_eval(yolo_outputs,
     max_boxes_tensor = K.variable(max_boxes, dtype='int32')
     K.get_session().run(tf.variables_initializer([max_boxes_tensor]))
     nms_index = tf.image.non_max_suppression(
-        boxes, scores, max_boxes_tensor, iou_threshold=iou_threshold)
+        boxes, scores, max_boxes_tensor, iou_threshold=iou_threshold, score_threshold=0.35)
     boxes = K.gather(boxes, nms_index)
     scores = K.gather(scores, nms_index)
     classes = K.gather(classes, nms_index)
