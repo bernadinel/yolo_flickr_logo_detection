@@ -25,7 +25,7 @@ argparser.add_argument(
     '-d',
     '--data_path',
     help ="path to numpy data file (.npz) containing np.object array boxes and np.uint8 array images",
-    default= r"C:\Users\Dell\Notebook\Computer_Vision\flickrLogo_train_data.npz")
+    default= r"C:\Users\Dell\Documents\COURS_TAF\Data\Computer_Vision\OFF\input_object_for_yolo\off_img_and_boxes.npz")
 
 
 argparser.add_argument(
@@ -38,7 +38,7 @@ argparser.add_argument(
     '-c',
     '--classes_path',
     help='path to classes file, defaults to pascal_classes.txt',
-    default=r"C:/Users/Dell/Notebook/Computer_Vision/className2ClassID.txt")
+    default=r"C:\Users\Dell\Documents\COURS_TAF\Data\Computer_Vision\OFF\input_object_for_yolo\className2ClassID.txt")
 
 # Default anchor boxes
 YOLO_ANCHORS = np.array(
