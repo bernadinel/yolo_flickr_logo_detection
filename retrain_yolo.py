@@ -229,7 +229,7 @@ def create_model(anchors, class_names, load_pretrained=True, freeze_body=True):
 
     return model_body, model
 
-def train(model, class_names, anchors, image_data, boxes, detectors_mask, matching_true_boxes, validation_split=0.1):
+def train(model, class_names, anchors, image_data, boxes, detectors_mask, matching_true_boxes, validation_split=0.2):
     '''
     retrain/fine-tune the model
 
